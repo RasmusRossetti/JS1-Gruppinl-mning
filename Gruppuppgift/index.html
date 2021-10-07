@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script type="text/javascript">
+
+      class Movie {
+        constructor(title, year, genre) {
+          this.title = title;
+          this.year = year;
+          this.genre = genre;
+        }
+        movieDetails() {
+          return this.title + " " + this.year + " " + this.genre;
+        }
+
+      }
+
+    </script>
+
+  </head>
+  <body>
+
+    <div class="">
+      <label for="movieTitle">Titel</label>
+      <input type="text" name="movieTitle" id="movieTitle">
+    </div>
+    <br>
+    <div class="">
+      <label for="movieYear">År</label>
+      <input type="text" name="movieYear" id="movieYear">
+    </div>
+    <br>
+    <div class="">
+      <label for="movieGenre">Genre</label>
+      <input type="text" name="movieGenre" id="movieGenre">
+    </div>
+    <br>
+    <button class="btn-primary" type="button" onclick="addMovie();clearInputs();">Lägg till film</button>
+
+    <button class="btn-primary" type="button" onclick="printMovies()">Uppdatera filmer</button>
+    <ul id="movieList">
+    </ul>
+
+  </body>
+
+  <script type="text/javascript">
+    var movies = [];
+
+    function addMovie() {
+      var title = document.getElementById("movieTitle").value;
+      var year = document.getElementById("movieYear").value;
+      var genre = document.getElementById("movieGenre").value;
+
+      movies.push(new Movie(title, year, genre));
+
+
+    }
+
+    function printMovies() {
+      var movieList = document.getElementById("movieList");
+
+      for (var i = 0; i < movies.length; i++) {
+        var li = document.createElement("li");
+        li.innerHTML = movies[i].movieDetails();
+        // li.appendChild(document.createTextNode("Titel:" + " " + movies[i].title))
+        movieList.appendChild(li);
+      }
+
+    }
+
+    function clearInputs() {
+      document.getElementById("movieTitle").value = "";
+      document.getElementById("movieYear").value = "";
+      document.getElementById("movieGenre").value = "";
+    }
+
+
+  </script>
+
+</html>
