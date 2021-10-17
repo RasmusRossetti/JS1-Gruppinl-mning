@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    
+    
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+   
+
+  </head>
+  <body>
+<div class="container">
+    
+    <nav>
+        <h1> <a href="index.html">Filmer</a> </h1>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Info</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+   <form>
+      <label for="movieTitle">Titel:</label>
+      <input type="text" name="movieTitle" id="movieTitle">
+    
+    <br>
+    
+      <label for="movieYear">År:</label>
+      <input type="text" name="movieYear" id="movieYear">
+
+    <br>
+    
+      <label for="movieGenre">Genre:</label>
+      <input type="text" name="movieGenre" id="movieGenre">
+    
+    <br>
+    <button class="btn-primary" type="button" onclick="addMovie();">Lägg till film</button>
+
+    
+    <ul
+     id="movieList">
+    </ul>
+</form>
+<div id="output"></div>
+
+</div>
+  </body>
+
+
+
+</html>
